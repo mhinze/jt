@@ -1,11 +1,8 @@
-﻿@using JanrainTest1.Controllers
-@model dynamic
+﻿@using JanrainTest1
+@model string
 @{
     ViewBag.Title = "title";
 }
-
-
-
 @section head
 {
     <script type="text/javascript">
@@ -13,7 +10,7 @@
             if (typeof window.janrain !== 'object') window.janrain = {};
             if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
 
-            janrain.settings.tokenUrl = '@Url.AbsoluteAction("SecurePage")';
+            janrain.settings.tokenUrl = '@Url.AbsoluteAction("ProcessLogin", "Account", Model)';
 
             function isReady() { janrain.ready = true; };
             if (document.addEventListener) {

@@ -8,7 +8,22 @@
     @RenderSection("head", false)
 </head>
 
-<body>
-    @RenderBody()
-</body>
+    <body>
+        <nav>
+            <ul>
+                @if (Context.User.Identity.IsAuthenticated)
+                {
+                    <li>@ViewBag.User.displayname</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>    
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>    
+                }
+                
+                
+            </ul>
+        </nav>
+        @RenderBody()
+    </body>
 </html>

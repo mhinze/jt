@@ -1,11 +1,11 @@
-﻿@model JanrainTest1.Controllers.AuthInfo
+﻿@model JanrainTest1.Models.AuthInfo.Profile
 
 <h1>Home/SecurePage</h1>
 
-<h1>@Model.profile.name.formatted</h1>
+<h1>@Model.name.formatted</h1>
 
-<p>@Model.profile.email</p>
-<p>@Model.profile.preferredUsername</p>
+<p>@Model.email</p>
+<p>@Model.preferredUsername</p>
 
 
-<img src="@Model.profile.photo"/>
+<img src="@Model.photo"/>
